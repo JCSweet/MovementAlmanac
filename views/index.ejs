@@ -1,38 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Movement Almanac</title>
-    <link rel="stylesheet" href="styles/style.css" />
-  </head>
-  <body>
-    <h1>The Movement Almanac</h1>
-    <form action="/searchMovement" method="post">
-      <input
-        type="text"
-        name="searchMovement"
-        placeholder="Search for an Exercise"
-      />
-      <input type="submit" name="Submit" />
-    </form>
-    <% if (locals.movement) { %> <% movement.forEach(movement => { %>
-    <div class="exerciseCard">
-      <div class="exerciseInfo">
-        <h2><%= movement.name %></h2>
-        <h3>Equipment: <%= movement.equipment %></h3>
-        <h4>How to:</h4>
-        <ol><% movement.instructions.forEach(instruction => { %>
-            <li><%= instruction %></li>
-        <% }) %></ol>
-      </div>
-      <div class="exerciseImg">
-        <img
-          src="<%= movement.gifUrl %>"
-          alt="Animated GIF showing <%= movement.name %>"
-        />
-      </div>
-    </div>
-    <% }); %> <% } %>
-  </body>
-</html>
+<%- include("partials/header.ejs"); %>
+<main>
+  <h1>The Movement Almanac</h1>
+  <div><%- include("partials/form.ejs"); %></div>
+  <div><%- include("partials/exercises.ejs"); %></div>
+</main>
+<%- include("partials/footer.ejs"); %>

@@ -1,0 +1,22 @@
+<section id="exerciseList">
+  <% if (locals.movement) { %> <% movement.forEach(movement => { %>
+  <div class="exerciseCard">
+    <div class="exerciseInfo">
+      <h2><%= movement.name %></h2>
+      <h3>Equipment: <%= movement.equipment %></h3>
+      <h4>How to:</h4>
+      <ol>
+        <% movement.instructions.forEach(instruction => { %>
+        <li><%= instruction %></li>
+        <% }) %>
+      </ol>
+    </div>
+    <div class="exerciseImg">
+      <img
+        src="<%= movement.gifUrl %>"
+        alt="Animated GIF showing how to perform <%= movement.name %>"
+      />
+    </div>
+  </div>
+  <% }); %> <% } %>
+</section>
