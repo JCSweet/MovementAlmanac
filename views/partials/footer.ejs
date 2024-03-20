@@ -1,5 +1,51 @@
 <footer>
     <p>Copyright © <%= new Date().getFullYear(); %></p>
   </footer>
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    // Show or Hide Exercise Instructions
+  let showInstructions = false;
+  $( ".toggleInstructionsBtn" ).on( "click", function() {
+    const id = $(this).attr("id");
+    if (!showInstructions) {
+        // Show Instructions
+        $("#instructions-" + id).addClass("showInstructions");
+        showInstructions = true;
+        $("#" + id).html("Hide How To");
+        $("#" + id).removeClass("primaryBtn");
+        $("#" + id).addClass("secondaryBtn");
+    } else if (showInstructions) {
+        // Hide Instructions
+        $("#instructions-" + id).removeClass("showInstructions");
+        showInstructions = false;
+        $("#" + id).html("How To");
+        $("#" + id).addClass("primaryBtn");
+        $("#" + id).removeClass("secondaryBtn");
+    }
+  });
+
+   // Show or Hide Muscle Detail
+   let showDetail = false;
+  $( ".toggleDetailsBtn" ).on( "click", function() {
+    const id = $(this).attr("id");
+    if (!showDetail) {
+        // Show Muscle Detail
+        $("#muscleDetail-" + id).addClass("showInstructions");
+        showDetail = true;
+        $("#" + id).html("Hide Detail");
+        $("#" + id).removeClass("primaryBtn");
+        $("#" + id).addClass("secondaryBtn");
+    } else if (showDetail) {
+        // Hide Muscle Detail
+        $("#muscleDetail-" + id).removeClass("showInstructions");
+        showDetail = false;
+        $("#" + id).html("Muscle Detail");
+        $("#" + id).addClass("primaryBtn");
+        $("#" + id).removeClass("secondaryBtn");
+    }
+  });
+</script>
+  <!-- //JQuery -->
 </body>
 </html>

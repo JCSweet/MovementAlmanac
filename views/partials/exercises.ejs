@@ -4,6 +4,24 @@
     <div class="exerciseInfo">
       <h2><%= movement.name %></h2>
       <h3>Equipment: <%= movement.equipment %></h3>
+      <h4>Muscle group: <%= movement.bodyPart %></h4>
+      <button class="toggleDetailsBtn" id="toggleDetailsBtn-<%= movement.id %>">
+        Muscle Detail
+      </button>
+      <button class="toggleInstructionsBtn" id="toggleInstructionsBtn-<%= movement.id %>">
+        How To
+      </button>
+      <div class="muscleDetail" id="muscleDetail-toggleDetailsBtn-<%= movement.id %>">
+        <h4>Targets: <%= movement.target %></h4>
+        <h4>Secondary Muscles:</h4>
+        <ul>
+          <% movement.secondaryMuscles.forEach(secondaryMuscle => { %>
+          <li><%= secondaryMuscle %></li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+    <div class="instructions" id="instructions-toggleInstructionsBtn-<%= movement.id %>">
       <h4>How to:</h4>
       <ol>
         <% movement.instructions.forEach(instruction => { %>

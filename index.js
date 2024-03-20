@@ -27,14 +27,20 @@ function filterResultsByEquipment(result, equipment) {
   switch (exercise.equipment) {
     case "barbell":
       result.map((exercise) => {
-        if (exercise.equipment === "barbell" || exercise.equipment === "olympic barbell") {
+        if (
+          exercise.equipment === "barbell" ||
+          exercise.equipment === "olympic barbell"
+        ) {
           return filteredResult.push(exercise);
         }
       });
       break;
     case "resistance band":
       result.map((exercise) => {
-        if (exercise.equipment === "resistance band" || exercise.equipment === "band") {
+        if (
+          exercise.equipment === "resistance band" ||
+          exercise.equipment === "band"
+        ) {
           return filteredResult.push(exercise);
         }
       });

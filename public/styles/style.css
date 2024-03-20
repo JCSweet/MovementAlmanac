@@ -35,6 +35,13 @@ form {
 .exerciseInfo {
     text-transform: capitalize;
 }
+.instructions,
+.muscleDetail {
+    display: none;
+}
+.showInstructions {
+    display: inline-block;
+  }
 .exerciseImg > img {
     max-width: 200px;
 }
