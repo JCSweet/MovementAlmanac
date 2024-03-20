@@ -1,0 +1,25 @@
+body {
+    background-color: rgb(126, 133, 140);
+    color: darkslategrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.exerciseCard {
+    border: 1px solid whitesmoke;
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 600px;
+}
+.exerciseInfo {
+    text-transform: capitalize;
+}
+.exerciseImg > img {
+    max-width: 200px;
+}
