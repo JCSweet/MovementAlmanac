@@ -1,7 +1,9 @@
 <footer>
+    <h4>Powered by <a href="https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb/details" target="_blank">ExerciseDB API</a> 💪</h4>
     <p>Copyright © <%= new Date().getFullYear(); %></p>
   </footer>
   <!-- JQuery -->
+  <script src="https://kit.fontawesome.com/6d3aafdcde.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script>
     // Show or Hide Exercise Instructions
@@ -12,14 +14,14 @@
         // Show Instructions
         $("#instructions-" + id).addClass("showInstructions");
         showInstructions = true;
-        $("#" + id).html("Hide How To");
+        $("#" + id).html('<i class="fa fa-list-ol fa-lg" aria-hidden="true"></i>');
         $("#" + id).removeClass("primaryBtn");
         $("#" + id).addClass("secondaryBtn");
     } else if (showInstructions) {
         // Hide Instructions
         $("#instructions-" + id).removeClass("showInstructions");
         showInstructions = false;
-        $("#" + id).html("How To");
+        $("#" + id).html('<i class="fa fa-list-ol fa-lg" aria-hidden="true"></i>');
         $("#" + id).addClass("primaryBtn");
         $("#" + id).removeClass("secondaryBtn");
     }
@@ -33,14 +35,14 @@
         // Show Muscle Detail
         $("#muscleDetail-" + id).addClass("showInstructions");
         showDetail = true;
-        $("#" + id).html("Hide Detail");
+        $("#" + id).html('</i><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i>');
         $("#" + id).removeClass("primaryBtn");
         $("#" + id).addClass("secondaryBtn");
     } else if (showDetail) {
         // Hide Muscle Detail
         $("#muscleDetail-" + id).removeClass("showInstructions");
         showDetail = false;
-        $("#" + id).html("Muscle Detail");
+        $("#" + id).html('<i class="fa fa-info-circle fa-lg" aria-hidden="true"></i>');
         $("#" + id).addClass("primaryBtn");
         $("#" + id).removeClass("secondaryBtn");
     }

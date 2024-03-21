@@ -1,40 +1,62 @@
 <section id="exerciseList">
   <% if (locals.movement) { %> <% movement.forEach(movement => { %>
   <div class="exerciseCard">
-    <div class="exerciseInfo">
-      <h2><%= movement.name %></h2>
-      <h3>Equipment: <%= movement.equipment %></h3>
-      <h4>Muscle group: <%= movement.bodyPart %></h4>
-      <button class="toggleDetailsBtn" id="toggleDetailsBtn-<%= movement.id %>">
-        Muscle Detail
-      </button>
-      <button class="toggleInstructionsBtn" id="toggleInstructionsBtn-<%= movement.id %>">
-        How To
-      </button>
-      <div class="muscleDetail" id="muscleDetail-toggleDetailsBtn-<%= movement.id %>">
-        <h4>Targets: <%= movement.target %></h4>
-        <h4>Secondary Muscles:</h4>
-        <ul>
-          <% movement.secondaryMuscles.forEach(secondaryMuscle => { %>
-          <li><%= secondaryMuscle %></li>
+    <div class="exerciseCardInner">
+      <div class="exerciseCardHeader">
+        <h2><%= movement.name %></h2>
+        <div class="exerciseCardImg">
+          <img
+            src="<%= movement.gifUrl %>"
+            alt="Animated GIF showing how to perform <%= movement.name %>"
+          />
+        </div>
+        <h3>Equipment: <%= movement.equipment %></h3>
+        <h4>Muscle group: <%= movement.bodyPart %></h4>
+        <div class="buttonGroup">
+          <button
+          class="toggleDetailsBtn primaryBtn"
+          id="toggleDetailsBtn-<%= movement.id %>"
+        >
+        <i class="fa fa-info-circle fa-lg" aria-hidden="true"></i>
+        </button>
+        <button
+          class="toggleInstructionsBtn primaryBtn"
+          id="toggleInstructionsBtn-<%= movement.id %>"
+        >
+        <i class="fa fa-list-ol fa-lg" aria-hidden="true"></i>
+        </button>
+        </div>
+      </div>
+      <div class="exerciseCardOptional">
+        <div
+          class="muscleDetail"
+          id="muscleDetail-toggleDetailsBtn-<%= movement.id %>"
+        >
+          <h4>Primary target:</h4>
+          <ul>
+            <li><%= movement.target %></li>
+          </ul>
+          <h4>Secondary Muscles:</h4>
+          <ul>
+            <% movement.secondaryMuscles.forEach(secondaryMuscle => { %>
+            <li><%= secondaryMuscle %></li>
+            <% }) %>
+          </ul>
+        </div>
+        <div
+        class="instructions"
+        id="instructions-toggleInstructionsBtn-<%= movement.id %>"
+      >
+        <h4>How to:</h4>
+        <ol>
+          <% movement.instructions.forEach(instruction => { %>
+          <li><%= instruction %></li>
           <% }) %>
-        </ul>
+        </ol>
+      </div>
       </div>
     </div>
-    <div class="instructions" id="instructions-toggleInstructionsBtn-<%= movement.id %>">
-      <h4>How to:</h4>
-      <ol>
-        <% movement.instructions.forEach(instruction => { %>
-        <li><%= instruction %></li>
-        <% }) %>
-      </ol>
-    </div>
-    <div class="exerciseImg">
-      <img
-        src="<%= movement.gifUrl %>"
-        alt="Animated GIF showing how to perform <%= movement.name %>"
-      />
-    </div>
+   
   </div>
   <% }); %> <% } %>
 </section>
