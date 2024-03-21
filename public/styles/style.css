@@ -129,10 +129,10 @@ form > input:focus {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   min-width: 224px;
   max-width: 400px;
+  min-height: 440px;
   width: 90%;
   box-shadow: 0 2px 4px -1px rgb(0 0 0 / 16%), 0 4px 5px 0 rgb(0 0 0 / 11%),
     0 1px 10px 0 rgb(0 0 0 / 10%);
