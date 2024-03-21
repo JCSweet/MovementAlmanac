@@ -8,7 +8,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
 let equipment;
-let filteredResult = [];
+let filteredResult;
 let availableEquipment = [
   "band",
   "barbell",

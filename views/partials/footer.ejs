@@ -6,20 +6,21 @@
   <script src="https://kit.fontawesome.com/6d3aafdcde.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script>
-    // Show or Hide Exercise Instructions
+
+// Show or Hide Exercise Instructions
   let showInstructions = false;
   $( ".toggleInstructionsBtn" ).on( "click", function() {
     const id = $(this).attr("id");
     if (!showInstructions) {
         // Show Instructions
-        $("#instructions-" + id).addClass("showInstructions");
+        $("#instructions-" + id).addClass("showHidden");
         showInstructions = true;
         $("#" + id).html('<i class="fa fa-list-ol fa-lg" aria-hidden="true"></i>');
         $("#" + id).removeClass("primaryBtn");
         $("#" + id).addClass("secondaryBtn");
     } else if (showInstructions) {
         // Hide Instructions
-        $("#instructions-" + id).removeClass("showInstructions");
+        $("#instructions-" + id).removeClass("showHidden");
         showInstructions = false;
         $("#" + id).html('<i class="fa fa-list-ol fa-lg" aria-hidden="true"></i>');
         $("#" + id).addClass("primaryBtn");
@@ -33,20 +34,21 @@
     const id = $(this).attr("id");
     if (!showDetail) {
         // Show Muscle Detail
-        $("#muscleDetail-" + id).addClass("showInstructions");
+        $("#muscleDetail-" + id).addClass("showHidden");
         showDetail = true;
         $("#" + id).html('</i><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i>');
         $("#" + id).removeClass("primaryBtn");
         $("#" + id).addClass("secondaryBtn");
     } else if (showDetail) {
         // Hide Muscle Detail
-        $("#muscleDetail-" + id).removeClass("showInstructions");
+        $("#muscleDetail-" + id).removeClass("showHidden");
         showDetail = false;
         $("#" + id).html('<i class="fa fa-info-circle fa-lg" aria-hidden="true"></i>');
         $("#" + id).addClass("primaryBtn");
         $("#" + id).removeClass("secondaryBtn");
     }
   });
+
 </script>
   <!-- //JQuery -->
 </body>

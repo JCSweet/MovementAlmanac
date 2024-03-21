@@ -150,7 +150,6 @@ form > input:focus {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* width: 100%; */
 }
 .buttonGroup {
   display: flex;
@@ -163,13 +162,12 @@ form > input:focus {
 .instructions,
 .muscleDetail {
   display: none;
-  /* width: 100%; */
   text-align: left;
 }
 .muscleDetail {
   text-transform: capitalize;
 }
-.showInstructions {
+.showHidden {
   display: block;
 }
 h2 {

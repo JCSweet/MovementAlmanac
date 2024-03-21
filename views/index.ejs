@@ -2,6 +2,11 @@
 <main>
   <h1>Movement Almanac</h1>
   <div><%- include("partials/form.ejs"); %></div>
+  <% if (locals.movement) { %>
+  <div>
+    <h2>Results: <%= movement.length %></h2>
+  </div>
+  <% } %>
   <div><%- include("partials/exercises.ejs"); %></div>
 </main>
 <%- include("partials/footer.ejs"); %>
