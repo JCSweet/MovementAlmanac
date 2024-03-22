@@ -1,6 +1,6 @@
 /* Main Color Pallette 
-Bg: #F7F7F7
-Copy: #5D5D5D
+Bg: #5D5D5D
+Copy: #F7F7F7
 Primary Button: #A0C334
 Secondary Button: #E5D429 */
 
@@ -98,21 +98,28 @@ form {
   flex-direction: column;
   gap: 10px;
 }
-form > input {
+input[type=text] {
   border-radius: 5px;
-  background: rgb(249, 250, 250);
+  background: #f7f7f7;
   border: 1px solid rgb(181, 189, 196);
   font-size: 16px;
   height: 40px;
   line-height: 24px;
   padding: 7px 8px;
-  color: rgb(8, 9, 10);
-  box-shadow: none;
+  color: #5D5D5D;
+  background-color: #e3e3e3;
+  border-color: #A0C334;
+  box-shadow: 1px 1px 0 #A0C334;
 }
-form > input:focus {
-  background-color: #fff;
-  border-color: #3b49df;
-  box-shadow: 1px 1px 0 #3b49df;
+input[type=text]:focus, textarea {
+  outline: #556a16;
+  border: 2px solid #556a16;
+  box-shadow: 1px 1px 0 #A0C334;
+  background-color: #f7f7f7;
+}
+
+input[type='radio'] {
+  accent-color: #A0C334;
 }
 /* Exercises */
 #exerciseList {
