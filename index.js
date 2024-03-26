@@ -21,7 +21,7 @@ let availableEquipment = [
 ];
 
 app.get("/", (req, res) => {
-  res.render("index.ejs", { movement: filteredResult });
+  res.render("index.ejs");
 });
 
 function filterResultsByEquipment(result, equipment) {
@@ -66,10 +66,10 @@ function filterResultsWithoutEquipment(result) {
 
 app.post("/searchMovement", async (req, res) => {
   const apiEndpoint = "/name/";
-  const apiParams = req.body.searchMovement;
+  const seachTerms = req.body.searchMovement;
   filteredResult = [];
   equipment = req.body.equipment;
-  const apiURL = `https://exercisedb.p.rapidapi.com/exercises${apiEndpoint}${apiParams}`;
+  const apiURL = `https://exercisedb.p.rapidapi.com/exercises${apiEndpoint}${seachTerms}`;
   const options = {
     method: "GET",
     url: apiURL,
@@ -80,7 +80,7 @@ app.post("/searchMovement", async (req, res) => {
     },
   };
   console.log(
-    `Console Log: Sending API request to: ${apiURL}. Search Term: "${apiParams}". Equipment: ${equipment}`
+    `Console Log: Sending API request to: ${apiURL}. Search Term: "${seachTerms}". Equipment: ${equipment}`
   );
   try {
     const response = await axios.request(options);
@@ -90,7 +90,7 @@ app.post("/searchMovement", async (req, res) => {
     } else {
       filterResultsWithoutEquipment(result);
     }
-    res.redirect("/");
+    res.render("index.ejs", { movement: filteredResult });
   } catch (error) {
     console.error(`Console Log: There is an error: ${error.response}`);
     res.status(500);
