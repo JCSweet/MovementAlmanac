@@ -2,7 +2,8 @@ import express from "express";
 import axios from "axios";
 
 const port = 3000;
-const app = express();
+const port = process.env.PORT;
+// const app = express();
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
