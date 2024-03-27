@@ -66,10 +66,11 @@ function filterResultsWithoutEquipment(result) {
 
 app.post("/searchMovement", async (req, res) => {
   const apiEndpoint = "/name/";
-  const seachTerms = toLowerCase(req.body.searchMovement);
+  const userInput = req.body.searchMovement;
+  const searchTerms = userInput.toLowerCase();
   filteredResult = [];
   equipment = req.body.equipment;
-  const apiURL = `https://exercisedb.p.rapidapi.com/exercises${apiEndpoint}${seachTerms}`;
+  const apiURL = `https://exercisedb.p.rapidapi.com/exercises${apiEndpoint}${searchTerms}`;
   const options = {
     method: "GET",
     url: apiURL,
@@ -80,7 +81,7 @@ app.post("/searchMovement", async (req, res) => {
     },
   };
   console.log(
-    `Console Log: Sending API request to: ${apiURL}. Search Term: "${seachTerms}". Equipment: ${equipment}`
+    `Console Log: Sending API request to: ${apiURL}. Search Term: "${searchTerms}". Equipment: ${equipment}`
   );
   try {
     const response = await axios.request(options);
