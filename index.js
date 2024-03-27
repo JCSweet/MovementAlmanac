@@ -76,7 +76,7 @@ app.post("/searchMovement", async (req, res) => {
     params: { limit: "100" },
     headers: {
       "X-RapidAPI-Key": "41613474f1mshba26fc3ffafdfcdp12fc43jsn96ff6c9c7661",
-      "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
+      "X-RapidAPI-Host": "exercisedb.p.rapidapi.com"
     },
   };
   console.log(
