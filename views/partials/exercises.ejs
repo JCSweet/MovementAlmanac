@@ -1,27 +1,28 @@
 <section id="exerciseList">
-  <% if (locals.movement) { %> <% movement.forEach(movement => { %>
+  <% if (locals.movement) { %> <%# movement.forEach(movement => { %>
+    <% for( let i = 0; i < movement.length; i++ ) { %>
   <div class="exerciseCard">
     <div class="exerciseCardInner">
       <div class="exerciseCardHeader">
-        <h2><%= movement.name %></h2>
+        <h2><%= movement[i].name %></h2>
         <div class="exerciseCardImg">
           <img
-            src="<%= movement.gifUrl %>"
+            src="<%= movement[i].gifUrl %>"
             alt="Animated GIF showing how to perform <%= movement.name %>"
           />
         </div>
-        <h3>Equipment: <%= movement.equipment %></h3>
-        <h4>Muscle group: <%= movement.bodyPart %></h4>
+        <h3>Equipment: <%= movement[i].equipment %></h3>
+        <h4>Muscle group: <%= movement[i].bodyPart %></h4>
         <div class="buttonGroup">
           <button
           class="toggleDetailsBtn primaryBtn"
-          id="toggleDetailsBtn-<%= movement.id %>"
+          id="toggleDetailsBtn-<%= movement[i].id %>"
         >
         <i class="fa fa-info-circle fa-lg" aria-hidden="true"></i>
         </button>
         <button
           class="toggleInstructionsBtn primaryBtn"
-          id="toggleInstructionsBtn-<%= movement.id %>"
+          id="toggleInstructionsBtn-<%= movement[i].id %>"
         >
         <i class="fa fa-list-ol fa-lg" aria-hidden="true"></i>
         </button>
@@ -30,17 +31,17 @@
       <div class="exerciseCardOptional">
         <div
           class="muscleDetail"
-          id="muscleDetail-toggleDetailsBtn-<%= movement.id %>"
+          id="muscleDetail-toggleDetailsBtn-<%= movement[i].id %>"
         >
           <h4>Primary target:</h4>
           <ul>
-            <li><%= movement.target %></li>
+            <li><%= movement[i].target %></li>
           </ul>
           <h4>Secondary Muscles:</h4>
           <ul>
-            <% movement.secondaryMuscles.forEach(secondaryMuscle => { %>
-            <li><%= secondaryMuscle %></li>
-            <% }) %>
+            <%# movement.secondaryMuscles.forEach(secondaryMuscle => { %>
+            <li><%# secondaryMuscle %></li>
+            <%# }) %>
           </ul>
         </div>
         <div
@@ -49,13 +50,13 @@
       >
         <h4>How to:</h4>
         <ol>
-          <% movement.instructions.forEach(instruction => { %>
-          <li><%= instruction %></li>
-          <% }) %>
+          <%# movement.instructions.forEach(instruction => { %>
+          <li><%# instruction %></li>
+          <%# }) %>
         </ol>
       </div>
       </div>
     </div>
   </div>
-  <% }); %> <% } %>
+  <%# }); %> <% } %> <% } %>
 </section>
