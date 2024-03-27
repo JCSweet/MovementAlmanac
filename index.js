@@ -66,7 +66,7 @@ function filterResultsWithoutEquipment(result) {
 
 app.post("/searchMovement", async (req, res) => {
   const apiEndpoint = "/name/";
-  const seachTerms = req.body.searchMovement;
+  const seachTerms = toLowerCase(req.body.searchMovement);
   filteredResult = [];
   equipment = req.body.equipment;
   const apiURL = `https://exercisedb.p.rapidapi.com/exercises${apiEndpoint}${seachTerms}`;
